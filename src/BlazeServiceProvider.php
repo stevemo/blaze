@@ -3,8 +3,8 @@
 namespace Stevemo\Blaze;
 
 use Spatie\LaravelPackageTools\Package;
-use Stevemo\Blaze\Commands\BlazeCommand;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Stevemo\Blaze\Commands\BlazeCommand;
 
 class BlazeServiceProvider extends PackageServiceProvider
 {
@@ -18,8 +18,8 @@ class BlazeServiceProvider extends PackageServiceProvider
         $package
             ->name('blaze')
             ->hasViews();
-            // ->hasConfigFile()
-            // ->hasMigration('create_blaze_table')
-            // ->hasCommand(BlazeCommand::class);
+        // ->hasConfigFile()
+        // ->hasMigration('create_blaze_table')
+        // ->hasCommand(BlazeCommand::class);
     }
 }
