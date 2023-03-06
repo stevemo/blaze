@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Stevemo\Blaze\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class BlazeCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'blaze';
 
     public $description = 'My command';
 
