@@ -2,9 +2,10 @@
 
 namespace Stevemo\Blaze\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
+use Livewire\LivewireServiceProvider;
 use Stevemo\Blaze\BlazeServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TestCase extends Orchestra
 {
@@ -21,6 +22,7 @@ class TestCase extends Orchestra
     {
         return [
             BlazeServiceProvider::class,
+            LivewireServiceProvider::class
         ];
     }
 
