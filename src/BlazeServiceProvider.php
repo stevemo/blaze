@@ -2,24 +2,26 @@
 
 namespace Stevemo\Blaze;
 
+use Livewire\Livewire;
+use Livewire\Component;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Stevemo\Blaze\Commands\BlazeCommand;
+use Stevemo\Blaze\Http\Livewire\UsersTable;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class BlazeServiceProvider extends PackageServiceProvider
 {
+    public function bootingPackage()
+    {
+        Livewire::component('blaze::users-table', UsersTable::class);
+    }
+
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
             ->name('blaze')
-            ->hasViews();
-        // ->hasConfigFile()
-        // ->hasMigration('create_blaze_table')
-        // ->hasCommand(BlazeCommand::class);
+            ->hasConfigFile()
+            ->hasViews()
+            ->hasRoute('web');
     }
 }
