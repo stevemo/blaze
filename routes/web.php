@@ -2,10 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(config('blaze.route_options'), function () {
+Route::macro('blazeRoutes', function($options = []) {
+    Route::group($options, function () {
+        $routes = config('blaze.routes', []);
 
-    if (config('blaze.enable_route.users')) {
-        Route::view('/users', 'blaze::users')->name('blaze.users.index');
-    }
+        if ($routes['users_page']) {
+            Route::view('/users', 'blaze::users')->name('blaze.users.index');
+        }
 
+    });
 });
